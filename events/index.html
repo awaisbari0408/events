@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Inline Events  -->
+    <h1>Inline Event</h1>
+    <!-- single click  -->
+    <button onclick="alert('Welcome!')">greeting</button>
+    <!-- double click  -->
+    <button ondblclick="alert('Welcome! Welcome to the best JS Course by Thapa Technical')">greeting again</button>
+    <!-- mouse over  -->
+    <button onmouseover="alert('Welcome again!')">hover greeting</button>
+    
+    <!-- Dom Event Handler  -->
+    <h1>Dom Event Handler</h1>
+    <button id="myBtn">greeting</button>
+    <button id="myBtn1">greeting again</button>
+    <button id="myBtn4">hover greeting</button>
+    
+    <!-- Add Event Listener Event Handler  -->
+    <h1>Add Event Listener Event Handler</h1>
+    <button id="myBtn2">greeting</button>
+    <button id="myBtn3">greeting again</button>
+    <button id="myBtn5">hover greeting</button>
+
+    <script>
+        // Using Dom Event Handler 
+        // single click 
+        document.getElementById('myBtn').onclick = () => {
+            alert('Welcome!');
+        };
+        // double click 
+        document.getElementById('myBtn1').ondblclick = () => {
+            alert('Welcome! Welcome to the best JS Course by Thapa Technical');
+        };
+        //  mouse over 
+        document.getElementById('myBtn4').onmouseover = () => {
+            alert('Welcome again!');
+        };
+
+
+        // Using addEventListener function 
+        // single click
+        document.getElementById('myBtn2').addEventListener('click', () => {
+           alert('Welcome!'); 
+        });
+        // double click
+        document.getElementById('myBtn3').addEventListener('dblclick', () => {
+            alert('Welcome! Welcome to the best JS Course by Thapa Technical');
+        });
+        //  mouse over 
+        document.getElementById('myBtn5').addEventListener('mouseover', () => {
+           alert('Welcome again!'); 
+        });
+    </script>
+</body>
+</html>
