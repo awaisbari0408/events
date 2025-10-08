@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="addBtn">Add Data to LocalStorage</button>
+        <button id="getBtn">Get Data from LocalStorage</button>
+        <button id="removeBtn">Delete Data from LocalStorage</button>
+    </div>
+    <script>
+        const studentBioData = {
+            firstName: "Vinod",
+            lastName: "Thapa",
+            age: 20,
+            gender: "Male",
+            grade: "A",
+            courses: ["Math", "Science", "English"],
+            address: {
+                street: "123 Main St",
+                city: "Cityville",
+                state: "State",
+                zipcode: "12345"
+            },
+        };
+
+        // Add to Local Storage
+        const addTodoList = () => {
+            localStorage.setItem("objectData", JSON.stringify(studentBioData));
+        };
+
+        // Get from Local Storage
+        const getTodoList = () => {
+            const retrievedStudentData = JSON.parse(localStorage.getItem("objectData"));
+            console.log("Retrieved from Local Storage:", retrievedStudentData);
+        };
+
+        // remove from Local Storage 
+        const removeTodoList = () => {
+            const removedData = localStorage.removeItem("objectData");
+            console.log("Data after removal:", removedData);
+        };
+
+        document.getElementById("addBtn").addEventListener('click', () => {
+            addTodoList();
+        });
+        document.getElementById("getBtn").addEventListener('click', () => {
+            getTodoList();
+        });
+        document.getElementById("removeBtn").addEventListener('click', () => {
+            removeTodoList();
+        });
+    </script>
+</body>
+</html>
